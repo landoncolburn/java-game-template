@@ -15,8 +15,8 @@ public class Splashscreen extends GameObject{
   }
 
   public void tick(){
-    if(count<245){
-      count++;
+    if(count<320){
+      count+=2;
     }
     if(count < 44){
       activeLogo = studioLogo[9-(int)((count)/5)];
@@ -27,8 +27,11 @@ public class Splashscreen extends GameObject{
     else if(count>200 && count < 244){
       activeLogo = studioLogo[(int)((count-200)/5)];
     }
-    else if(count>244){
+    else if(count>244 && count < 300){
       activeLogo = null;
+    } else if(count>300){
+      Game.gameInstance.handler.addObject(new MainMenu());
+      Game.gameInstance.handler.removeObject(this);
     }
   }
 

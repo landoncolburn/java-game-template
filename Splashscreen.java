@@ -30,7 +30,6 @@ public class Splashscreen extends GameObject{
     else if(count>244 && count < 300){
       activeLogo = null;
     } else if(count>300){
-      Game.gameInstance.handler.addObject(new MainMenu());
       Game.gameInstance.handler.removeObject(this);
     }
   }

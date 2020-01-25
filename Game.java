@@ -48,7 +48,7 @@ public class Game extends Canvas implements Runnable {
   }
 
   @Override
-  public void run(){
+  public void run() {
     this.requestFocus();
     long lastTime = System.nanoTime();
     double amountOfTicks = 60.0;
@@ -64,11 +64,20 @@ public class Game extends Canvas implements Runnable {
         tick();
         delta--;
       }
-      render();
+      if (isRunning)
+        render();
       frames++;
       if (System.currentTimeMillis() - timer > 1000) {
         timer += 1000;
+        System.out.println("FPS: " + frames);
         frames = 0;
+      }
+      long endTime = System.nanoTime();
+      long elapsedTime = endTime - now;
+      try {
+        Thread.sleep((Math.abs((long) 16666666 - elapsedTime)) / 1000000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
       }
     }
     stop();

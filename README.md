@@ -8,9 +8,9 @@ To begin, clone this repository to your GitHub, add create new project. Select *
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Canvas](https://docs.oracle.com/javase/7/docs/api/java/awt/Canvas.html) - Used to draw graphics
+* [KeyAdapter](https://docs.oracle.com/javase/7/docs/api/java/awt/event/KeyAdapter.html) - User input class
+* [Linked List](https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html) - Used to keep track of active *GameObjects*
 
 ## Contributing
 
@@ -20,7 +20,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 * **Landon Colburn** - *Sole Developer*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/landoncolburn/java-game-template/contributors) who participated in this project.
 
 ## License
 

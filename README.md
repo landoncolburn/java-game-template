@@ -6,7 +6,7 @@ This is a Java template to give a solid framework in 2D game design. Features ga
 
 To begin, clone this repository to your GitHub, add create new project. Select *java-game-template* as the repository template. Then add *GameObjects* to the *Handler* class, draw their graphics in the *render()* method, and run their logic in the *tick()*.
 
-## Built With
+## Documentation
 
 * [Canvas](https://docs.oracle.com/javase/7/docs/api/java/awt/Canvas.html) - Used to draw graphics
 * [KeyAdapter](https://docs.oracle.com/javase/7/docs/api/java/awt/event/KeyAdapter.html) - User input class

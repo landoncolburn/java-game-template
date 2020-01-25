@@ -9,6 +9,10 @@ public class Handler {
     gameObjects = new LinkedList<GameObject>();
   }
 
+  public GameObject getObject(int i){
+    return gameObjects.get(i);
+  }
+
   public void addObject(GameObject object){
     gameObjects.add(object);
   }
@@ -18,8 +22,8 @@ public class Handler {
   }
 
   public void render(Graphics g){
-    for(GameObject o : gameObjects){
-      o.render(g);
+    for(int i = 0; i < gameObjects.size(); i++){
+      gameObjects.get(i).render(g);
     }
   }
 

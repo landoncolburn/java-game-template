@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.image.*;
+import java.awt.Event;
 
 public class Game extends Canvas implements Runnable {
 
@@ -12,6 +13,8 @@ public class Game extends Canvas implements Runnable {
   public Dimension size = new Dimension(1000, 600);
   private BufferedImage studioLogo;
   public BufferedImageLoader bil = new BufferedImageLoader();
+  public MouseMotionInput mmi;
+  public MouseInput mi;
 
   public Game(){
     new Window("Game", size, this);
@@ -20,9 +23,13 @@ public class Game extends Canvas implements Runnable {
     handler = new Handler();
     gameInstance = this;
 
+    mmi = new MouseMotionInput(handler);
+    mi = new MouseInput(handler);
+
     handler.addObject(new Splashscreen());
 
-    // this.addMouseListener(new MouseInput(handler));
+    this.addMouseListener(mi);
+    this.addMouseMotionListener(mmi);
   }
 
   public void start(){

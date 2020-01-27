@@ -8,11 +8,13 @@ public class Game extends Canvas implements Runnable {
 
   public static Game gameInstance;
   public Handler handler;
-  private boolean isRunning = false;
-  private Thread thread;
-  public Dimension size = new Dimension(1000, 600);
+
   private BufferedImage studioLogo;
+  private Thread thread;
+  private boolean isRunning = false;
+
   public BufferedImageLoader bil = new BufferedImageLoader();
+  public Dimension size = new Dimension(1000, 600);
   public MouseMotionInput mmi;
   public MouseInput mi;
 

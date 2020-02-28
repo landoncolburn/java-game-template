@@ -13,6 +13,16 @@ public class Handler {
     return gameObjects.get(i);
   }
 
+  public ArrayList<GameObject> getByID(ID i){
+    ArrayList<GameObject> go = new ArrayList<GameObject>();
+    for(GameObject g : gameObjects){
+      if(g.getID() == i){
+        go.add(g);
+      }
+    }
+    return go;
+  }
+
   public void addObject(GameObject object){
     gameObjects.add(object);
   }

@@ -8,30 +8,31 @@ public class Game extends Canvas implements Runnable {
 
   public static Game gameInstance;
   public Handler handler;
+  public GUIHandler gui;
 
-  private BufferedImage studioLogo;
   private Thread thread;
   private boolean isRunning = false;
 
-  public BufferedImageLoader bil = new BufferedImageLoader();
-  public Dimension size = new Dimension(1000, 600);
+  public Dimension size;
   public MouseMotionInput mmi;
   public MouseInput mi;
 
   public Game(){
+    size = new Dimension(1000, 600);
     new Window("Game", size, this);
     start();
 
     handler = new Handler();
+    gui = new GUIHandler();
     gameInstance = this;
 
     mmi = new MouseMotionInput(handler);
     mi = new MouseInput(handler);
 
-    handler.addObject(new Splashscreen());
-
     this.addMouseListener(mi);
     this.addMouseMotionListener(mmi);
+
+    createWorld();
   }
 
   public void start(){
@@ -64,11 +65,10 @@ public class Game extends Canvas implements Runnable {
       lastTime = now;
       while (delta >= 1) {
         tick();
-        delta--;
-      }
-      if (isRunning)
         render();
-      frames++;
+        delta--;
+        frames++;
+      }
       if (System.currentTimeMillis() - timer > 1000) {
         timer += 1000;
         System.out.println("FPS: " + frames);
@@ -100,14 +100,25 @@ public class Game extends Canvas implements Runnable {
     g.fillRect(0, 0, size.width, size.height);
 
     handler.render(g);
+    gui.render(g);
 
     //////////////////////////////////
     g.dispose();
     bs.show();
   }
 
+
+  //Runs every frame
   public void tick(){
     handler.tick();
+    gui.tick();
+    System.out.println("tick");
+  }
+
+
+  //Runs before first tick method
+  public void createWorld(){
+
   }
 
   public static void main(String[] args) {

@@ -5,9 +5,8 @@ import java.io.File;
 
 public class BufferedImageLoader{
 
-  private BufferedImage image;
-
-  public BufferedImage loadImage(String path){
+  public static BufferedImage loadImage(String path){
+    BufferedImage image = null;
     try{
       image = ImageIO.read(new File(path));
     } catch(Exception e){
